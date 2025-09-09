@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h2>CURSOS</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>LUNES</th>
+                <th>MARTES</th>
+                <th>MIÉRCOLES</th>
+                <th>JUEVES</th>
+                <th>VIERNES</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>PYTHON</td>
+                <td>REACT</td>
+                <td class="blanco">JAVASCRIPT</td>
+                <td>PYTHON</td>
+                <td>REACT</td>
+            </tr>
+            <tr>
+                <td>TYPESCRIPT</td>
+                <td>NODE.JS</td>
+                <td></td>
+                <td>TYPESCRIPT</td>
+                <td>NEXT.JS</td>
+            </tr>
+            <tr>
+                <td>PYTHON</td>
+                <td>REACT</td>
+                <td>TYPESCRIPT</td>
+                <td>NEXT.JS</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
+
+------ CSS -----
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+
+thead tr {
+    background-color: #555;
+    color: white;
+}
+
+th {
+    text-transform: uppercase;
+}
+
+.rojo {
+    background-color: red;
+    color: white;
+}
