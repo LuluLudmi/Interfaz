@@ -1,0 +1,83 @@
+AutoMaper
+package ar.edu.centro8.daw.trabajo.practico.n2.dto;
+
+import ar.edu.centro8.daw.trabajo.practico.n2.model.Auto;
+
+public class AutoMaper {
+      public Auto toEntity(AutoRequestDTO dto) {
+        
+        Auto auto = new Auto();
+        auto.setMarca(dto.getMarca());
+        auto.setPrecio(dto.getPrecio());
+        return auto;
+    }
+        
+    public AutoResponseDTO toResponseDTO(Auto auto) {
+     
+        
+        return new AutoResponseDTO(
+            auto.getId(),
+            auto.getMarca(),
+            auto.getPrecio()
+        );
+    }
+
+    public void updateEntityFromDTO(Auto auto, AutoRequestDTO dto) {
+       
+            auto.setMarca(dto.getMarca());
+            auto.setPrecio(dto.getPrecio());
+        }
+
+}
+AutoRequestDTO
+package ar.edu.centro8.daw.trabajo.practico.n2.dto;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+
+public class AutoRequestDTO {
+    private String marca;
+    private double precio;
+
+    public AutoRequestDTO() {
+    }
+
+    public AutoRequestDTO(String marca, double precio) {
+        this.marca = marca;
+        this.precio = precio;
+    }
+
+    public void validarMarca() {
+        if (marca == null || marca.trim().isEmpty()) {
+            throw new IllegalArgumentException("El nombre no puede estar vacío");
+        }
+        if (marca.trim().length() < 2) {
+            throw new IllegalArgumentException("El nombre debe tener al menos 2 caracteres");
+        }
+
+        this.marca = marca.trim();
+    }
+
+}
+AutoResponseDTO
+package ar.edu.centro8.daw.trabajo.practico.n2.dto;
+
+public class AutoResponseDTO {
+    private Long id;
+    private String marca;
+    private int precio;
+
+    // Constructors
+    public AutoResponseDTO() {
+    }
+
+    public AutoResponseDTO(Long id, String marca, int precio) {
+        this.id = id;
+        this.marca = marca;
+        this.precio = precio;
+    }
+
+}
